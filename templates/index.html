@@ -3,4 +3,11 @@
 {% block content %}
 {{ super() }}
 <p>Содержимое страницы "О сайте"</p>
+<div class="profile-ava"><img src="{{ url_for('loadImage') }}"></div>
+<div class="profile-load">
+    <form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Загрузить">
+    </form> 
+</div>
 {% endblock %}
